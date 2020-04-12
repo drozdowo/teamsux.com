@@ -24,7 +24,12 @@ class App extends React.Component {
     if (this.state.activeEl === "loading") {
       activeEl = <Loading />;
     } else if (this.state.activeEl === "report") {
-      activeEl = <Report params={this.state.data} />;
+      activeEl = (
+        <Report
+          params={this.state.data}
+          setActiveElement={this.setActiveElement}
+        />
+      );
     } else {
       activeEl = (
         <div>

@@ -32,14 +32,16 @@
 }
 
 .appBody {
+  overflow: scroll;
   flex: 90;
+  height: 100%;
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: white;
-  background-image: url("bg.jpg");
+  background-image: url("bg.jpeg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
