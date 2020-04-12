@@ -10,6 +10,7 @@ function App() {
       </div>
       <div className="appBody">
         <div className="searchBar">
+          Enter your Summoner Name:
           <Box />
         </div>
       </div>

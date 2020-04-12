@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import "./box.css";
 
 export default class Box extends React.Component {
   constructor() {
