@@ -11,12 +11,27 @@ export default class Box extends React.Component {
     return this;
   }
 
+  getEndpoint = () => {
+    if (window.location.toString().includes("localhost")) {
+      return "http://localhost:3001";
+    } else {
+      return "http://teamsux.com/api";
+    }
+  };
+
   userKeyDown = async (evt) => {
     if (evt.key === "Enter") {
-      let resp = await axios.get(
-        `http://localhost:3000/checkPlayer/${this.state.enteredName}`
-      );
-      console.log(resp.data);
+      axios
+        .get(
+          `${this.getEndpoint()}/checkPlayerSummary/${this.state.enteredName}`
+        )
+        .then((resp) => {
+          this.props.setActiveElement("report", resp);
+        })
+        .catch((err) => {
+          this.props.setActiveElement("home", { data: "error", error: err });
+        });
+      this.props.setActiveElement("loading", {});
     }
   };
 
